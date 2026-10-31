@@ -2,6 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>
+  // The old Pages address sends visitors to forgetful.mugenno.com before anything renders.
+  // Pages cannot turn off *.pages.dev, so this runs in the page; branch previews are left alone.
+  if (location.hostname === 'forgetful.pages.dev') {
+    location.replace('https://forgetful.mugenno.com' + location.pathname + location.search + location.hash);
+  }
+</script>
+<link rel="canonical" href="https://forgetful.mugenno.com/">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#F4EEDF">
 <title>forgetful · spaced repetition</title>
